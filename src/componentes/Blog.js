@@ -1,13 +1,17 @@
 import React from 'react';
+import posts from './../data/posts';
 
 const Blog = () => {
     return (  
         <div>
                   <h2>Blog</h2>
                   <ul>
-                    <li>Articulo numero 1</li>  
-                    <li>Articulo numero 2</li>
-                    <li>Articulo numero 3</li>
+                    {posts.map((post) => {
+                        return(
+
+                            <li>{post.titulo}</li>
+                        )
+                    })}
                   </ul>
                 </div>
     );
