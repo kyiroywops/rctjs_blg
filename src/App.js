@@ -3,6 +3,8 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Inicio from './componentes/Inicio.js';
 import Blog from './componentes/Blog.js';
 import Acercade from './componentes/Acercade.js';
+import Post from './componentes/Post.js';
+import Error404 from './componentes/Error404.js';
 import styled from 'styled-components';
 import Header from './componentes/Header.js';
 
@@ -13,6 +15,7 @@ const App = () => {
         <Header />
         <Main>
             <Routes>
+              <Route path="*" element={<Error404 />} />  
               <Route path="/" element={
                 <Inicio />
                 
@@ -20,6 +23,9 @@ const App = () => {
               } />
               <Route path="/blog" element={
                 <Blog />
+              } />
+              <Route path="/post/:id" element={
+                <Post />
               } />
               <Route path="acercade" element={
                 
